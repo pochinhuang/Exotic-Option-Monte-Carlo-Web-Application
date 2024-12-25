@@ -53,68 +53,89 @@ A digital option, also known as a binary option, is a financial derivative that 
 Q, & \text{if } S_T \geq K, \\
 0, & \text{if } S_T < K,
 \end{cases}
-  
-$\text{Put} =
+```
+
+```math
+\text{Put} =
 \begin{cases} 
 Q, & \text{if } S_T < K, \\
 0, & \text{if } S_T \geq K.
-\end{cases}$
+\end{cases}
 ```
 
 ### Barrier
 A barrier option is a type of exotic option where the payoff depends not only on the price of the underlying asset at expiration but also on whether the asset price reaches a specified barrier level during the option's life.
 
 #### Up-and-In
-$\text{Call} = 
+```math
+\text{Call} = 
 \begin{cases} 
 \max(S_T - K, 0), & \text{if } S_t \geq B \text{ for some } t \\ 
 0, & \text{otherwise} 
-\end{cases}$
+\end{cases}
+```
 
-$\text{Put} = 
+```math
+\text{Put} = 
 \begin{cases} 
 \max(K - S_T, 0), & \text{if } S_t \geq B \text{ for some } t \\ 
 0, & \text{otherwise} 
-\end{cases}$
+\end{cases}
+```
 
 #### Up-and-Out
-$\text{Call} = 
+
+```math
+\text{Call} = 
 \begin{cases} 
 \max(S_T - K, 0), & \text{if } S_t < B \text{ for all } t \\ 
 0, & \text{otherwise} 
-\end{cases}$
+\end{cases}
+```
 
-$\text{Put} = 
+```math
+\text{Put} = 
 \begin{cases} 
 \max(K - S_T, 0), & \text{if } S_t < B \text{ for all } t \\ 
 0, & \text{otherwise} 
-\end{cases}$
+\end{cases}
+```
 
 #### Down-and-In
-$\text{Call} = 
+
+```math
+\text{Call} = 
 \begin{cases} 
 \max(S_T - K, 0), & \text{if } S_t \leq B \text{ for some } t \\ 
 0, & \text{otherwise} 
-\end{cases}$
+\end{cases}
+```
 
-$\text{Put} = 
+```math
+\text{Put} = 
 \begin{cases} 
 \max(K - S_T, 0), & \text{if } S_t \leq B \text{ for some } t \\ 
 0, & \text{otherwise} 
-\end{cases}$
+\end{cases}
+```
 
 #### Down-and-Out
-$\text{Call} = 
+
+```math
+\text{Call} = 
 \begin{cases} 
 \max(S_T - K, 0), & \text{if } S_t > B \text{ for all } t \\ 
 0, & \text{otherwise} 
-\end{cases}$
+\end{cases}
+```
 
-$\text{Put} = 
+```math
+\text{Put} = 
 \begin{cases} 
 \max(K - S_T, 0), & \text{if } S_t > B \text{ for all } t \\ 
 0, & \text{otherwise} 
-\end{cases}$
+\end{cases}
+```
 
 ### Lookback
 A lookback option is an exotic option where the payoff is based on the highest or lowest price of the underlying asset during its lifetime.

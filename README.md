@@ -31,7 +31,7 @@ Key Features:
 - Variance Reduction Methods: Implement techniques like Antithetic Variates and Delta-Based Control Variates to improve simulation accuracy.
 - Multithreading Parallel Execution: Support for parallel processing using multithreading to enhance simulation speed and efficiency.
 
-![user interface](webui.png)
+![user interface](images/webui.png)
 
 ## Exotic Options
 Financial derivatives with complex features and unique payoff structures, differing from standard options such as European or American options. These options require more sophisticated pricing techniques.

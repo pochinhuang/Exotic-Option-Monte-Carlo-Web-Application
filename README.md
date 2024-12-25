@@ -160,25 +160,25 @@ $\Delta_{\text{call}} = N(d_1)$
 
 $\Delta_{\text{put}} = N(d_1) - 1$
 
-![Delta](delta.png)
+![Delta](images/delta.png)
 
 ### Gamma
 Gamma measures the rate of change of Delta with respect to changes in the price of the underlying asset.
 
 $\Gamma = \dfrac{N'(d_1)}{S \cdot \sigma \cdot \sqrt{T}}$
 
-![Gamma vs Stock](gamma_s.png)
+![Gamma vs Stock](images/gamma_s.png)
 
-![Gamma vs Tine](gamma_t.png)
+![Gamma vs Tine](images/gamma_t.png)
 
 ### Vega
 Vega measures the sensitivity of an option's price to changes in the volatility of the underlying asset.
 
 $V = S \cdot N'(d_1) \cdot \sqrt{T}$
 
-![Vega vs Stock](vega_s.png)
+![Vega vs Stock](images/vega_s.png)
 
-![Vega vs Tine](vega_t.png)
+![Vega vs Tine](images/vega_t.png)
 
 ### Theta
 Theta measures the sensitivity of an option's price to the passage of time, also known as time decay.
@@ -187,7 +187,7 @@ $\Theta_{\text{call}} = -\dfrac{S \cdot N'(d_1) \cdot \sigma}{2 \sqrt{T}} - r \c
 
 $\Theta_{\text{put}} = -\dfrac{S \cdot N'(d_1) \cdot \sigma}{2 \sqrt{T}} + r \cdot K \cdot e^{-rT} \cdot N(-d_2)$
 
-![Theta](theta.png)
+![Theta](images/theta.png)
 
 ### Rho
 Rho measures the sensitivity of an option's price to changes in the risk-free interest rate.
@@ -196,7 +196,7 @@ $\rho_{\text{call}} = K \cdot T \cdot e^{-rT} \cdot N(d_2)$
 
 $\rho_{\text{put}} = -K \cdot T \cdot e^{-rT} \cdot N(-d_2)$
 
-![Rho](rho.png)
+![Rho](images/rho.png)
 
 ### Explanation
 

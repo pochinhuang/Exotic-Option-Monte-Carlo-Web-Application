@@ -53,7 +53,6 @@ A digital option, also known as a binary option, is a financial derivative that 
 Q, & \text{if } S_T \geq K, \\
 0, & \text{if } S_T < K,
 \end{cases}
-
 </div>```
   
 $\text{Put} =

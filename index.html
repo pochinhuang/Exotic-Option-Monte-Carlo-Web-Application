@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte Carlo Option Pricer</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<h1>Exotic Options Pricer</h1>
+
+<body>
+    <div class="container">
+        <form id="monteCarloForm">
+                <div class="form-group">
+                    <label for="optionClass">Option Type:</label>
+                    <select id="optionClass">
+                        <option value="E">European</option>
+                        <option value="A">Asian</option>
+                        <option value="D">Digital</option>
+                        <option value="B">Barrier</option>
+                        <option value="L">Lookback</option>
+                        <option value="R">Range</option>
+                    </select><br><br>
+                </div>
+
+                <div id="barrierOptions" class="form-group hidden">
+                    <label for="barrierClass">Barrier Option Type:</label>
+                    <select id="barrierClass">
+                        <option value="">None</option>
+                        <option value="UI">Up-and-In</option>
+                        <option value="DI">Down-and-In</option>
+                        <option value="UO">Up-and-Out</option>
+                        <option value="DO">Down-and-Out</option>
+                    </select><br><br>
+                </div>
+
+                <div id="lookBackClass" class="form-group hidden">
+                    <label for="lookBackClass">Lookback Option Type:</label>
+                    <select id="lookBackClass">
+                        <option value="">None</option>
+                        <option value="FX">Fixed Strike</option>
+                        <option value="FT">Floating Strike</option>
+                    </select><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="stockPrice">Stock Price:</label>
+                    <input type="number" id="stockPrice" required><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="strikePrice">Strike Price:</label>
+                    <input type="number" id="strikePrice"><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="riskFreeRate">Risk-Free Rate:</label>
+                    <input type="number" id="riskFreeRate" step="0.01" required><br><br>
+                </div>
+                
+                <div class="form-group">
+                    <label for="volatility">Volatility:</label>
+                    <input type="number" id="volatility" step="0.01" required><br><br>
+                </div>
+
+                <div id="h" class="form-group hidden">
+                    <label for="h">Barrier Level:</label>
+                    <input type="number" id="h" step="0.01"><br><br>
+                </div>
+
+                <div id="p" class="form-group hidden">
+                    <label for="p">Payout:</label>
+                    <input type="number" id="p" step="0.01"><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeToMaturity">Time to Maturity (Years):</label>
+                    <input type="number" id="timeToMaturity" step="0.01" required><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="numberOfSteps">Number of Steps:</label>
+                    <input type="number" id="numberOfSteps" required><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="numberOfSimulations">Number of Simulations:</label>
+                    <input type="number" id="numberOfSimulations" required><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="useAntithetic">Antithetic Variates:</label>
+                    <input type="checkbox" id="useAntithetic"><br><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="controlVariate">Control Variates:</label>
+                    <input type="checkbox" id="controlVariate"><br><br>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="parallelExecution">Parallel Execution:</label>
+                    <input type="checkbox" id="parallelExecution"><br><br>
+                </div>
+
+                <button type="submit">Submit</button>
+        </form>
+    </div>
+        
+    <div class="results">
+        <h2>Results:</h2>
+        <table border="1">
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 40%;">
+                <col style="width: 40%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Call</th>
+                    <th>Put</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>Price</td>
+                    <td id="callPrice"></td>
+                    <td id="putPrice"></td>
+                </tr>
+                <tr>
+                    <td>Standard Error</td>
+                    <td id="callSE"></td>
+                    <td id="putSE"></td>
+                </tr>
+                <tr>
+                    <td>Delta</td>
+                    <td id="callDelta"></td>
+                    <td id="putDelta"></td>
+                </tr>
+                <tr>
+                    <td>Gamma</td>
+                    <td id="callGamma"></td>
+                    <td id="putGamma"></td>
+                </tr>
+                <tr>
+                    <td>Vega</td>
+                    <td id="callVega"></td>
+                    <td id="putVega"></td>
+                </tr>
+                <tr>
+                    <td>Theta</td>
+                    <td id="callTheta"></td>
+                    <td id="putTheta"></td>
+                </tr>
+                <tr>
+                    <td>Rho</td>
+                    <td id="callRho"></td>
+                    <td id="putRho"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script src="index.js"></script>
+    </div>
+</body>
+</html>

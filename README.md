@@ -46,6 +46,7 @@ $\text{Put} = \max(K - \bar{S}, 0)$
 ### Digital
 A digital option, also known as a binary option, is a financial derivative that delivers a fixed, predetermined payout if the price of the underlying asset meets a specific condition relative to the strike price at expiration, such as being above or below a certain threshold.
 
+<div align="left">
 ```math
 \text{Call} =
 \begin{cases} 
@@ -53,7 +54,8 @@ Q, & \text{if } S_T \geq K, \\
 0, & \text{if } S_T < K,
 \end{cases}
 ```
-
+</div>
+  
 $\text{Put} =
 \begin{cases} 
 Q, & \text{if } S_T < K, \\
